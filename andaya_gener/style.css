@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background: url("images/background.png") no-repeat center center fixed;
+    background-size: cover;
+    color: rgb(6, 0, 0);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.background {
+    background: url("images/screenshot.jpg") no-repeat center;
+    background-size: contain;
+    color: rgb(204, 244, 230);
+    text-align: center;
+    padding: 50px 0px;
+    font-size: 3em;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #14a8a3;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Headings */
+h1, h2 {
+    font-family: 'Arial', 'sans-serif', 'Comic';
+    font-size: 2em;
+    margin-top: 60px;
+}
+
+/* Contact Form Styling */
+.form-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(229, 171, 34, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 120px;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.form-container input, .form-container textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #0c0c0c;
+    border-radius: 5px;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    background-color: #0bb91f;
+    color: hwb(120 95% 3%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #20be72;
+}
+
+/* Section Layout Styling */
+ul, ol {
+    margin-left: 20px;
+}
+
+a {
+    color: #f31010;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Gallery Styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    margin-top: 120px;
+}
+
+img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Add padding/margin-top to sections to prevent overlap with fixed navbar */
+.interests, .testimonials, .my-works, .work2, .work4 {
+    padding-top: 120px;
+}
+
+/* General Mobile Adjustments */
+@media screen and (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    .form-container h2 {
+        font-size: 1.2rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+    }
+}
+
+/* Navigation Bar */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+    }
+}
+
+/* Form Container */
+@media screen and (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        margin-top: 100px;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Gallery */
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    img {
+        height: 200px;
+    }
+}
