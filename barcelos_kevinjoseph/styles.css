@@ -20,14 +20,10 @@ body {
   grid-area: header;
 }
 
-.header .box {
-  background-image: url(assets/binary-bg.jpg);
-  background-size: 20vh;
-}
-
 .header h1 {
+  text-align: center;
   font-size: 1.5em;
-  color: #a9a9a9;
+  color: #000000;
 }
 
 h2 {
