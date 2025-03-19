@@ -70,7 +70,7 @@ h1 {
 
 .box-2 {
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   width: 500px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -85,14 +85,32 @@ h1 {
   width: 300px;
 }
 
+.box-3 {
+  background-color: #fff;
+  padding: 25px;
+  width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.box-3:hover {
+  transform: scale(1.05);
+}
+
+.box-3:last-child {
+  width: 500px;
+}
+
 .font {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 24px;
   color: #4a90e2;
   margin-bottom: 15px;
 }
 
-ul, ol {
+ul,
+ol {
   text-align: left;
   margin: 0 auto;
   max-width: 200px;
@@ -125,7 +143,7 @@ a:hover {
 /* Contact Form Styles */
 .header {
   border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc;
   padding: 10px 0;
   margin-bottom: 20px;
 }
@@ -145,12 +163,7 @@ label {
   color: #555;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="number"],
-select,
-input[type="file"] {
+.form-input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -171,19 +184,6 @@ input[type="file"] {
   position: relative;
 }
 
-.radio-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 5px;
-}
-
-.radio-option {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
 .button {
   display: flex;
   gap: 10px;
@@ -201,7 +201,7 @@ input[type="file"] {
 }
 
 .btn:hover {
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
 
 .btn-reset {
@@ -214,6 +214,11 @@ input[type="file"] {
   color: #fff;
 }
 
+.btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
 .form-row {
   display: flex;
   gap: 15px;
@@ -222,6 +227,33 @@ input[type="file"] {
 
 .form-row > div {
   flex: 1;
+}
+
+/* Goals Section Styles */
+.short-long-term {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.short-long-term > div {
+  padding: 20px;
+  border: 2px solid #474747;
+  border-radius: 3px;
+}
+
+.short-long-term > li {
+  margin-bottom: 10px;
+}
+
+.comment-form {
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+textarea.form-input {
+  min-height: 80px;
+  resize: vertical;
 }
 
 @media (max-width: 320px) {
@@ -251,17 +283,23 @@ input[type="file"] {
     width: 90%;
   }
 
+  .box-3 {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .box-3:last-child {
+    width: 90%;
+  }
+
   .name-fields,
   .form-row {
     flex-direction: column;
     gap: 5px;
   }
 
-  .radio-group {
-    grid-template-columns: 1fr;
-  }
-
-  ul, ol {
+  ul,
+  ol {
     max-width: 80%;
   }
 
@@ -269,6 +307,16 @@ input[type="file"] {
     flex-direction: column;
     gap: 5px;
     align-items: stretch;
+  }
+
+  .short-long-term > div {
+    padding: 10px;
+    border: 2px solid #474747;
+    border-radius: 3px;
+  }
+
+  .short-long-term > li {
+    margin-bottom: 5px;
   }
 }
 
@@ -299,17 +347,23 @@ input[type="file"] {
     width: 100%;
   }
 
+  .box-3 {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .box-3:last-child {
+    width: 100%;
+  }
+
   .name-fields,
   .form-row {
     flex-direction: column;
     gap: 8px;
   }
 
-  .radio-group {
-    grid-template-columns: 1fr;
-  }
-
-  ul, ol {
+  ul,
+  ol {
     max-width: 90%;
   }
 
@@ -347,17 +401,23 @@ input[type="file"] {
     width: 100%;
   }
 
+  .box-3 {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .box-3:last-child {
+    width: 100%;
+  }
+
   .name-fields,
   .form-row {
     flex-direction: column;
     gap: 10px;
   }
 
-  .radio-group {
-    grid-template-columns: 1fr;
-  }
-
-  ul, ol {
+  ul,
+  ol {
     max-width: 95%;
   }
 
@@ -395,17 +455,23 @@ input[type="file"] {
     width: 100%;
   }
 
+  .box-3 {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .box-3:last-child {
+    width: 100%;
+  }
+
   .name-fields,
   .form-row {
     flex-direction: column;
     gap: 12px;
   }
 
-  .radio-group {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  ul, ol {
+  ul,
+  ol {
     max-width: 95%;
   }
 
@@ -443,17 +509,23 @@ input[type="file"] {
     width: 100%;
   }
 
+  .box-3 {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .box-3:last-child {
+    width: 100%;
+  }
+
   .name-fields,
   .form-row {
     flex-direction: row;
     gap: 15px;
   }
 
-  .radio-group {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  ul, ol {
+  ul,
+  ol {
     max-width: 95%;
   }
 
