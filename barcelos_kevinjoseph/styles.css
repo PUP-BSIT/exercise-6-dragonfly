@@ -20,14 +20,10 @@ body {
   grid-area: header;
 }
 
-.header .box {
-  background-image: url(assets/binary-bg.jpg);
-  background-size: 20vh;
-}
-
 .header h1 {
+  text-align: center;
   font-size: 1.5em;
-  color: #a9a9a9;
+  color: #000000;
 }
 
 h2 {
@@ -40,6 +36,27 @@ h2 {
 
 .my-works {
   grid-area: my-works;
+}
+
+.goals {
+  grid-area: goals;
+}
+
+.goals .comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.comment-section input,
+textarea {
+  width: 80%;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #848484;
+  outline: none;
 }
 
 .testimonials {
@@ -144,7 +161,7 @@ hr {
   height: 15px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   body {
     display: grid;
     gap: 10px;
@@ -154,6 +171,7 @@ hr {
       ". header ."
       ". interest-hobbies ."
       ". my-works ."
+      ". goals ."
       ". testimonials ."
       ". gallery ."
       ". contact-form .";
@@ -182,6 +200,7 @@ hr {
       ". header ."
       ". interest-hobbies ."
       ". my-works ."
+      ". goals ."
       ". testimonials ."
       ". gallery ."
       ". contact-form .";
@@ -196,13 +215,13 @@ hr {
   .gallery .vertical-image img,
   .gallery .horizontal-image img {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     place-items: center;
     justify-content: space-evenly;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   body {
     display: grid;
     gap: 10px;
@@ -211,7 +230,7 @@ hr {
     grid-template-areas:
       ". header header ."
       ". interest-hobbies my-works ."
-      ". testimonials testimonials ."
+      ". goals testimonials ."
       ". gallery gallery ."
       ". contact-form contact-form .";
   }
@@ -220,24 +239,33 @@ hr {
   .my-works .box {
     min-height: 200px;
   }
+
+  .goals .box,
+  .testimonials .box {
+    min-height: 200px;
+    height: 90%;
+  }
 }
 
 @media (min-width: 1025px) {
   body {
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-      ". header header header ."
-      ". interest-hobbies my-works testimonials ."
-      ". gallery gallery gallery ."
-      ". contact-form contact-form contact-form .";
+      ". header header header header ."
+      ". interest-hobbies interest-hobbies my-works my-works ."
+      ". goals goals testimonials testimonials ."
+      ". gallery gallery gallery gallery."
+      ". contact-form contact-form contact-form contact-form .";
   }
 
   .interest-hobbies .box,
   .my-works .box,
+  .goals .box,
   .testimonials .box {
+    padding: 10px;
     height: 90%;
     align-items: stretch;
   }
