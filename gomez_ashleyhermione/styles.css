@@ -1,20 +1,21 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-image: url('img1.jpg');
-    background-size: cover;
-    background-attachment: fixed;
+    background: url('img1.jpg') no-repeat center/cover fixed;
     color: #5a5a5a;
     text-align: center;
-    padding: 20px;
     margin: 0;
+    padding: 20px;
 }
 
 .header h1 {
-    background-image: url('img2.jpg');
-    background-size: cover;
+    background: url('img2.jpg') no-repeat center/cover;
     color: black;
     padding: 40px;
     border-radius: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ff6699;
 }
 
 .content {
@@ -24,16 +25,23 @@ body {
     gap: 20px;
 }
 
-.box {
-    background-color: #fff4f8;
-    border: 2px solid #ffccdd;
+.box, .container, .comment-box {
+    background-color: #ffedf5;
+    border: 3px solid #ffccdd;
     border-radius: 15px;
     padding: 20px;
-    max-width: 37.5rem;
     width: 90%;
-    margin: 0 auto;
+    margin: 20px auto;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.box {
+    max-width: 37.5rem;
+}
+
+.container, .comment-box {
+    max-width: 25rem;
 }
 
 ul, ol {
@@ -63,26 +71,10 @@ a {
     font-weight: bold;
 }
 
-.container {
-    background: #ffedf5;
-    border: 3px solid #ffccdd;
-    border-radius: 10px;
-    padding: 40px;
-    width: 90%;
-    max-width: 25rem;
-    margin: 20px auto;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.container h1 {
-    text-align: center;
-    color: #ff6699;
-}
-
 form {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 label {
@@ -110,12 +102,10 @@ input, textarea {
 }
 
 .name-group label, .email-group label {
-    text-align: left;
     width: 100%;
 }
 
-.name-group input,
-.email-group input {
+.name-group input, .email-group input {
     width: 100%;
 }
 
@@ -126,7 +116,7 @@ input, textarea {
     width: 100%;
 }
 
-button {
+button, #submit_comment {
     background-color: #ff99cc;
     color: white;
     border: none;
@@ -140,10 +130,19 @@ button[type="reset"] {
     background-color: #ffb3d9;
 }
 
-button:hover {
+button:hover, #submit_comment:hover {
     background-color: #ff66a3;
 }
 
+#submit_comment {
+    width: 100px;
+    align-self: center;
+}
+
+#submit_comment:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 
 @media (max-width: 320px) {
     .box{
